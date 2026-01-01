@@ -1,0 +1,125 @@
+/* Authority Stack — Mate-World Contractors Ltd */
+:root{
+  --bg:#F7F8F9;
+  --ink:#0E1217;
+  --muted:#8A8F98;
+  --line:rgba(14,18,23,.14);
+  --copper:#C8742C;
+  --blue:#1E5EFF;
+  --maxw:1200px;
+  --gutter:24px;
+  --r:14px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink)}
+body{
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  letter-spacing:-0.01em;
+}
+h1,h2,h3{font-family: "Founders Grotesk", "Space Grotesk", Inter, system-ui, sans-serif; letter-spacing:-0.03em}
+a{color:inherit;text-decoration:none}
+.container{width:min(var(--maxw), calc(100% - 2*var(--gutter))); margin:0 auto}
+
+.topbar{border-bottom:1px solid var(--line); font-size:.95rem}
+.topbar .container{display:flex; gap:16px; justify-content:space-between; align-items:center; padding:12px 0; color:rgba(14,18,23,.86)}
+.topbar a{color:rgba(14,18,23,.86)}
+.topbar a:hover{color:var(--ink)}
+
+.header{position:sticky; top:0; z-index:50; background:rgba(247,248,249,.92); backdrop-filter: blur(12px); border-bottom:1px solid var(--line)}
+.header .container{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+.brand{display:flex; align-items:center; gap:12px}
+.brand .wordmark{line-height:1}
+.brand strong{display:block; font-size:1.02rem}
+.brand span{display:block; font-size:.86rem; color:var(--muted); margin-top:4px}
+.logo{width:44px;height:44px;border-radius:999px; overflow:hidden; border:1px solid var(--line); background:#fff}
+.logo img{width:100%;height:100%;object-fit:cover}
+
+.nav{display:flex; gap:10px; align-items:center}
+.nav a{padding:10px 10px; border-radius:10px; font-weight:700; font-size:.95rem; color:rgba(14,18,23,.86)}
+.nav a.active,.nav a:hover{background:rgba(14,18,23,.06); color:var(--ink)}
+
+.actions{display:flex; gap:10px; align-items:center}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 16px; border-radius:2px; border:1px solid var(--line); font-weight:800; background:transparent}
+.btn.primary{border-color:transparent; background:var(--ink); color:var(--bg)}
+.btn.primary:hover{background:#000}
+.btn.ghost{border-color:rgba(247,248,249,.35); color:var(--bg)}
+.btn.ghost:hover{border-color:rgba(247,248,249,.65)}
+.btn.link{border:none; padding:0; border-radius:0; font-weight:900}
+.btn.link:hover{color:#000}
+
+.burger{display:none; width:44px; height:44px; border-radius:2px; border:1px solid var(--line); background:transparent}
+.burger svg{width:22px;height:22px}
+.mobilepanel{display:none; border-top:1px solid var(--line); background:rgba(247,248,249,.98)}
+.mobilepanel .container{padding:10px 0 14px; display:flex; flex-direction:column; gap:6px}
+.mobilepanel a{padding:12px 12px; border-radius:10px; font-weight:900}
+.mobilepanel a:hover{background:rgba(14,18,23,.06)}
+
+.hero{position:relative; min-height:100vh; background:url('assets/img/hero.jpg') center/cover no-repeat; color:var(--bg)}
+.hero:before{content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(0,0,0,.78), rgba(0,0,0,.24))}
+.hero .container{position:relative; padding:120px 0 80px}
+.kicker{display:inline-flex; align-items:center; gap:10px; font-weight:900; font-size:.95rem; padding:8px 12px; border:1px solid rgba(247,248,249,.28); border-radius:999px; color:rgba(247,248,249,.92)}
+.hero h1{margin:18px 0 8px; font-size:clamp(44px, 6vw, 68px); line-height:1.02}
+.hero p{margin:0 0 18px; max-width:52ch; color:rgba(247,248,249,.88); font-size:1.08rem; line-height:1.6}
+.coords{position:absolute; right:var(--gutter); bottom:28px; font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size:.85rem; color:rgba(247,248,249,.72); letter-spacing:0.02em}
+.reveal-on-scroll{opacity:0; transition:none}
+.reveal-on-scroll.is-visible{opacity:1}
+
+.section{padding:120px 0}
+.section.tight{padding:90px 0}
+.hr{height:1px;background:var(--line); width:100%}
+
+.bigcopy{font-size:clamp(28px, 3.3vw, 44px); line-height:1.12; letter-spacing:-0.03em; font-weight:900; max-width:20ch}
+.subcopy{margin-top:18px; max-width:62ch; color:rgba(14,18,23,.78); line-height:1.75}
+.grid{display:grid; grid-template-columns:repeat(12, 1fr); gap:22px}
+.col-4{grid-column:span 4}
+.col-6{grid-column:span 6}
+.col-12{grid-column:span 12}
+
+.triad{border-top:1px solid var(--line)}
+.triad .item{padding:24px 0; border-bottom:1px solid var(--line)}
+.triad h3{margin:0 0 8px; font-size:1.25rem}
+.triad p{margin:0; color:rgba(14,18,23,.78); line-height:1.7}
+
+.stack{border:1px solid var(--line); border-radius:var(--r); padding:22px; background:rgba(255,255,255,.55)}
+.stack code{display:block; font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size:.95rem; line-height:1.75; color:rgba(14,18,23,.86)}
+
+.map{border:1px solid var(--line); border-radius:var(--r); overflow:hidden; background:rgba(255,255,255,.55)}
+.map .img{aspect-ratio:16/11; background:radial-gradient(600px 320px at 30% 30%, rgba(30,94,255,.12), transparent 60%), linear-gradient(135deg, rgba(14,18,23,.08), rgba(200,116,44,.06)); position:relative}
+.pin{width:10px;height:10px;border-radius:999px; background:var(--blue); position:absolute}
+.pin.copper{background:var(--copper)}
+.pin.gray{background:rgba(14,18,23,.35)}
+.map .legend{padding:14px 16px; border-top:1px solid var(--line); display:flex; gap:12px; flex-wrap:wrap; font-size:.95rem; color:rgba(14,18,23,.75); font-weight:800}
+.dot{width:10px;height:10px;border-radius:999px; display:inline-block; margin-right:6px}
+
+.projectcard{border:1px solid var(--line); border-radius:var(--r); overflow:hidden; background:#fff}
+.projectcard img{width:100%; height:340px; object-fit:cover; display:block; filter:grayscale(100%)}
+.projectcard:hover img{filter:grayscale(0%)}
+.projectcard .pad{padding:18px 18px 20px}
+.projectcard h3{margin:0 0 10px; font-size:1.15rem}
+.projectcard p{margin:0; color:rgba(14,18,23,.78); line-height:1.7}
+
+.filter{border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:22px 0}
+.filter ul{margin:12px 0 0; padding-left:18px; color:rgba(14,18,23,.78); line-height:1.8}
+.filter strong{display:block; margin-top:14px}
+
+.form{border:1px solid var(--line); border-radius:var(--r); background:#fff; padding:22px}
+.field{display:grid; gap:8px; margin-bottom:14px}
+label{font-weight:900}
+input,textarea,select{width:100%; border:1px solid rgba(14,18,23,.18); border-radius:2px; padding:12px 12px; font:inherit; background:transparent}
+textarea{min-height:140px; resize:vertical}
+.checkgrid{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px}
+.check{display:flex; gap:10px; align-items:flex-start; padding:10px; border:1px solid rgba(14,18,23,.12); border-radius:2px}
+.check input{width:auto; margin-top:3px}
+
+.footer{padding:64px 0; border-top:1px solid var(--line); color:rgba(14,18,23,.78)}
+.footer .grid{align-items:start}
+.footer h4{margin:0 0 10px; color:var(--ink)}
+.small{margin-top:26px; padding-top:18px; border-top:1px solid var(--line); color:rgba(14,18,23,.68); font-weight:800}
+
+@media (max-width: 980px){
+  .nav{display:none}
+  .burger{display:inline-grid; place-items:center}
+  .col-4,.col-6{grid-column:span 12}
+  .hero .container{padding-top:100px}
+  .checkgrid{grid-template-columns:1fr}
+}
